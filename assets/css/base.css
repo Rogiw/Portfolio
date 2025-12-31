@@ -1,0 +1,28 @@
+@font-face{
+    font-family: 'OldLondom';
+    src: url('../fonts/old-londom/old-london.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face{
+    font-family: 'old-english-five';
+    src: url('../fonts/old-english-five/old-english-five.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face{
+    font-family: 'BBH-Bogle';
+    src: url('../fonts/BBH_Bogle/BBHBogle-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face{
+    font-family: 'Merriweather-Light';
+    src: url('../fonts/Merriweather/static/Merriweather_36pt-Light.ttf"') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

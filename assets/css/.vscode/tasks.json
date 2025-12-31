@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Update Live Preview IP",
+      "type": "shell",
+      "command": "node .vscode/configLivePreview.js",
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

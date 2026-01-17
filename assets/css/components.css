@@ -1,0 +1,159 @@
+.brand-title {
+  font-family: 'OldLondom' !important;
+  font-size: 8rem;
+
+}
+
+.emphasis {
+  font-family: 'Arial Black' !important;
+  font-size: 3rem;
+  color: var(--nickname-color);
+}
+.subtle{
+  font-family: 'Arial';
+  color: rgb(185, 185, 185);
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px black;
+}
+.classical {
+  font-family: 'Merriweather-Light', 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  font-weight: 3000
+}
+
+.text-center {
+  display: absolute;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.color-brand {
+  color: var(--theme-text);
+}
+
+.border-styles::before,
+.border-styles::after {
+  content: "";
+  display: inline-block;
+  width: 15rem;
+  height: 3px;
+
+  vertical-align: bottom;
+  align-items: center;
+  margin: 0 10px;
+  background-color: var(--theme-text);
+  overflow: hidden;
+}
+
+
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: inline-block;
+  right: 0;
+  gap: 10px;
+
+}
+.submenu a {
+  display: flex;
+  color: white;
+  background-color: black;
+  border-radius:20px;
+  padding: 5px;
+  width:170px;
+  text-decoration: none;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.scheduled {
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+
+  right: 0;
+  margin: 10px;
+  width: auto;
+  height: 200px;
+  z-index: 1;
+  opacity: 50%;
+
+
+}
+
+.scheduled:hover {
+  opacity: 100%;
+}
+
+.copyright {
+  display: flex;
+  position: sticky;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+
+.btn {
+  display: flex;
+
+  place-content: center;
+  cursor: pointer;
+
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  padding: 10px 20px;
+  background-color: var(--theme-text);
+  color: black;
+
+  font-weight: bold;
+  font-family: 'Arial Black',
+    Courier,
+    monospace;
+  font-size: 1.3rem;
+
+  text-transform: uppercase;
+  margin: auto;
+
+}
+
+.btn:hover {
+  background-color: var(--theme-hover);
+  color: black;
+  transform: scale(1.1);
+}
+
+.animated-text .line {
+  display: block;
+
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+}
+
+.animated-text .line::after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: var(--theme-text);
+  margin-left: 2px;
+  vertical-align: bottom;
+  opacity: 0;
+  animation: blink 0.7s step-end ;
+}
+
+.animated-text .line.typing::after {
+  opacity: 1;
+
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

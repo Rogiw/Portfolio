@@ -1,0 +1,13 @@
+:root{
+    --color-bg-left: #141414;
+    --color-bg-right: #3e3e41;
+    --theme-text: #944498;
+    --icon-selected: #4B4B4D;
+    --theme-hover: #6D3877;
+    --munu-hover: #EC268F;
+    --nickname-color: #A53692;
+}
+.icon_colors{
+  --bg-icon: #000;
+  --content-icon: white;
+}

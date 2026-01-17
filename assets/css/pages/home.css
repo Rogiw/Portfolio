@@ -1,0 +1,82 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right,
+      var(--color-bg-left) 0%,
+      var(--color-bg-left) 50%,
+      var(--color-bg-right) 50%,
+      var(--color-bg-right) 100%);
+
+}
+
+
+.bg-img-home {
+
+  height: 50rem;
+    max-width: 100%;
+  overflow: hidden;
+
+  bottom: 0;
+  right: 0;
+  left: 0; 
+  margin: 0 auto;
+
+  position: absolute;
+  z-index: -1;
+
+}
+
+
+.side-menu{
+  display: flex;
+  right: 0;
+  align-items: flex-end;      
+  gap: 10px;   
+}
+
+.links{
+  text-decoration: none;
+  color: var(--munu-hover);
+}
+.perfil{
+  color: white;
+  position: sticky;
+  top: 0;
+  margin: 20px 0 auto 50px;
+  width: fit-content;
+  
+}
+.perfil-image img {
+  
+  border-radius: 50%;
+  border: 7px solid black;
+  height: 200px;
+  width: fit-content;
+}
+.position{
+  right: 0;
+  left: 0;
+  bottom: 25%;
+  margin: 0 auto;
+}
+.agendar{
+  display: flex;
+  position: absolute;
+  bottom: 35%;
+  font-size: 1.1rem;
+
+}
+.brand{
+  position: absolute;
+  bottom: 150px;
+  max-height: 150px;
+  margin: auto;
+  text-align: center;
+  z-index: -1;
+}
+.brand h2, h1{
+  display: flex;
+
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}

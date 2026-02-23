@@ -30,7 +30,7 @@ body {
   display: flex;
   right: 0;
   align-items: flex-end;      
-  gap: 10px;   
+  gap: 10px;    
 }
 
 .links{
@@ -55,7 +55,7 @@ body {
 .position{
   right: 0;
   left: 0;
-  bottom: 25%;
+  bottom: 0;
   margin: 0 auto;
 }
 .agendar{
@@ -66,11 +66,14 @@ body {
 
 }
 .brand{
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
   position: absolute;
-  bottom: 150px;
-  max-height: 150px;
-  margin: auto;
-  text-align: center;
+
+  margin-bottom: 0;
+  max-height: auto;
+  margin: 0px;
   z-index: -1;
 }
 .brand h2, h1{

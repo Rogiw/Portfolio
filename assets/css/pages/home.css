@@ -75,11 +75,11 @@ body {
   max-height: auto;
   margin: 0px;
   z-index: -1;
+  
+  gap: 0.5em
 }
 .brand h2, h1{
   display: flex;
-
-  overflow: hidden;
   justify-content: center;
   align-items: center;
 }

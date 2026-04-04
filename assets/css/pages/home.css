@@ -1,85 +1,254 @@
 body {
-  min-height: 100vh;
-  background: linear-gradient(to right,
-      var(--color-bg-left) 0%,
-      var(--color-bg-left) 50%,
-      var(--color-bg-right) 50%,
-      var(--color-bg-right) 100%);
-
+  background: linear-gradient(
+    to right,
+    var(--color-bg-left) 0%,
+    var(--color-bg-left) 50%,
+    var(--color-bg-right) 50%,
+    var(--color-bg-right) 100%
+  );
 }
 
-
-.bg-img-home {
-
-  height: 50rem;
-    max-width: 100%;
-  overflow: hidden;
-
-  bottom: 0;
-  right: 0;
-  left: 0; 
-  margin: 0 auto;
-
-  position: absolute;
-  z-index: -1;
-
-}
-
-
-.side-menu{
-  display: flex;
-  right: 0;
-  align-items: flex-end;      
-  gap: 10px;    
-}
-
-.links{
-  text-decoration: none;
+.links {
   color: var(--munu-hover);
 }
-.perfil{
-  color: white;
-  position: sticky;
-  top: 0;
-  margin: 20px 0 auto 50px;
-  width: fit-content;
-  
-}
-.perfil-image img {
-  
-  border-radius: 50%;
-  border: 7px solid black;
-  height: 200px;
-  width: fit-content;
-}
-.position{
+
+.bg-img-home {
+  position: absolute;
   right: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 50rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.position {
+  right: 0;
+  bottom: 0;
+  left: 0;
   margin: 0 auto;
 }
-.agendar{
-  display: flex;
+
+.hero-copy {
+  position: static;
+}
+
+.agendar {
   position: absolute;
   bottom: 35%;
+  display: flex;
   font-size: 1.1rem;
-
 }
-.brand{
+
+.brand {
+  position: absolute;
+  z-index: -1;
   display: flex;
   flex-direction: column;
-  box-sizing: content-box;
-  position: absolute;
-
-  margin-bottom: 0;
-  max-height: auto;
+  gap: 0.5em;
   margin: 40px;
-  z-index: -1;
-  
-  gap: 0.5em
+  box-sizing: content-box;
 }
-.brand h2, h1{
+
+.brand h1,
+.brand h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.perfil {
+  position: sticky;
+  top: 20px;
+  width: fit-content;
+  margin: 20px 0 auto 50px;
+  color: white;
+  z-index: 30;
+}
+
+.perfil-image {
+  position: relative;
+  width: fit-content;
+}
+
+.perfil-trigger {
+  display: block;
+  cursor: pointer;
+}
+
+.perfil-image img {
+  width: auto;
+  height: 200px;
+  border: 7px solid black;
+  border-radius: 50%;
+}
+
+.perfil-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 214px;
+  height: 214px;
+  pointer-events: none;
+}
+
+.perfil-icon {
+  --angle: 0deg;
+  --radius: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) translate(0, 0) scale(0.75);
+  transform-origin: center center;
+  transition: transform 0.6s ease, opacity 0.35s ease;
+  z-index: -1;
+}
+
+.perfil.is-open .perfil-icon {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%)
+    translate(
+      calc(cos(var(--angle)) * var(--radius)),
+      calc(sin(var(--angle)) * var(--radius))
+    )
+    scale(1);
+    z-index: 1;
+}
+
+.perfil-icon.devchem-icon {
+  --radius: 130px;
+  --angle: -40deg;
+
+  width: 40px;
+  height: 40px;
+}
+
+.perfil-icon.book-icon {
+  --radius: 130px;
+  --angle: 20deg;
+
+  width: 40px;
+  height: 40px;
+}
+
+.perfil-icon.molecul_search_icon {
+  --radius: 130px;
+  --angle: -10deg;
+
+  width: 40px;
+  height: 40px;
+}
+
+.perfil-icon.gear_icon {
+  --angle: 50deg;
+  --radius: 110px;
+
+  width: 25px;
+  height: 25px;
+  
+}
+
+.perfil-icon .icon-asset {
+  transition: transform 0.2s ease;
+}
+
+.perfil.is-open .perfil-icon:hover .icon-asset {
+  
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 5px rgba(165, 54, 146, 0.35));
+}
+
+@media (max-width: 768px) {
+  .hero-copy {
+    position: absolute;
+    right: 0;
+    bottom: 9%;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
+  .bg-img-home {
+    left: 50%;
+    right: auto;
+    bottom: 0;
+    width: min(92vw, 420px);
+    height: auto;
+    max-height: 52vh;
+    object-fit: contain;
+    transform: translateX(-50%);
+  }
+
+  .agendar {
+    position: static;
+    z-index: 2;
+    width: fit-content;
+    padding: 0;
+  }
+
+  .brand {
+    position: static;
+    z-index: 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .perfil {
+    top: 20px;
+    width: fit-content;
+    margin: 20px 0 0 16px;
+  }
+
+  .perfil-image {
+    width: 140px;
+    margin: 0;
+  }
+
+  .perfil-image img {
+    width: 140px;
+    height: 140px;
+    border-width: 5px;
+    object-fit: cover;
+  }
+
+  .perfil-icons {
+    width: 140px;
+    height: 140px;
+    left: 0;
+    transform: none;
+  }
+
+  .perfil-icon.devchem-icon,
+  .perfil-icon.book-icon,
+  .perfil-icon.molecul_search_icon {
+    --radius: 90px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .perfil-icon.gear_icon {
+    --radius: 85px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .perfil-info {
+    max-width: min(56vw, 260px);
+    margin-top: 18px;
+    text-align: left;
+  }
 }

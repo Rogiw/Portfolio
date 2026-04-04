@@ -1,28 +1,65 @@
-@font-face{
-    font-family: 'OldLondom';
-    src: url('../fonts/old-londom/old-london.regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+@font-face {
+  font-family: "OldLondom";
+  src: url("../fonts/old-londom/old-london.regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-@font-face{
-    font-family: 'old-english-five';
-    src: url('../fonts/old-english-five/old-english-five.regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+
+@font-face {
+  font-family: "old-english-five";
+  src: url("../fonts/old-english-five/old-english-five.regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-@font-face{
-    font-family: 'BBH-Bogle';
-    src: url('../fonts/BBH_Bogle/BBHBogle-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+
+@font-face {
+  font-family: "BBH-Bogle";
+  src: url("../fonts/BBH_Bogle/BBHBogle-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-@font-face{
-    font-family: 'Merriweather-Light';
-    src: url('../fonts/Merriweather/static/Merriweather_36pt-Light.ttf"') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+
+@font-face {
+  font-family: "Merriweather-Light";
+  src: url("../fonts/Merriweather/static/Merriweather_36pt-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  font: inherit;
+  background: none;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }

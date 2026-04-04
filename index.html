@@ -22,8 +22,8 @@
 
         <nav class="side-menu">
 
-            <button class="icon icon-menu" aria-label="Chemistry">
-                <svg class="icon chem">
+            <button class="icon icon-button icon-menu no-select" aria-label="Chemistry">
+                <svg class="icon-symbol chem">
                     <use href="assets/icons/chem_mask-icon.svg#chem-mask-icon"></use>
                 </svg>
             </button>
@@ -33,8 +33,8 @@
                 <a href="pages/chemistry.html">Experiments</a>
             </div>
 
-            <button class="icon icon-menu" aria-label="Programming">
-                <svg class="icon">
+            <button class="icon icon-button icon-menu no-select" aria-label="Programming">
+                <svg class="icon-symbol">
                     <use href="assets/icons/terminal-icon.svg#terminal-icon"></use>
                 </svg>
             </button>
@@ -43,8 +43,8 @@
                 <a href="">Projects</a>
             </div>
 
-            <button class="icon icon-menu" aria-label="Arts">
-                <svg class="icon chem">
+            <button class="icon icon-button icon-menu no-select" aria-label="Arts">
+                <svg class="icon-symbol chem">
                     <use href="assets/icons/art_icon.svg#art-icon"></use>
                 </svg>
             </button>
@@ -53,8 +53,8 @@
                 <a href="">Projects</a>
             </div>
 
-            <button class="icon icon-menu" aria-label="Analysis">
-                <svg class="icon chem">
+            <button class="icon icon-button icon-menu no-select" aria-label="Analysis">
+                <svg class="icon-symbol chem">
                     <use href="assets/icons/data_analise_icon.svg#data_analise-icon"></use>
                 </svg>
             </button>
@@ -63,8 +63,8 @@
                 <a href="">Projecs</a>
             </div>
 
-            <button class="icon icon-menu" aria-label="Plan">
-                <svg class="icon chem">
+            <button class="icon icon-button icon-menu no-select" aria-label="Plan">
+                <svg class="icon-symbol chem">
                     <use href="assets/icons/Excel-dark-icon.svg#Excel-dark-icon"></use>
                 </svg>
             </button>
@@ -73,28 +73,48 @@
                 <a href="">Projects</a>
             </div>
         </nav>
-        <a href="pages/scheduled.html" aria-label="Analysis">
-            <img src="assets/icons/agenda-icon.svg" class="scheduled" alt="Agenda_icon">
+        <a href="pages/scheduled.html " aria-label="Analysis" class="scheduled no-select">
+            <img class="no-select" src="assets\icons\schedule_no_text_icon.svg"  alt="Agenda_icon"><span class=" scheduled_text">Scheduled</span>
         </a>
     </header>
     <main>
         <section class="background-img">
-            <img class='bg-img-home' src="assets/img/home_chemprogram_img.webp" alt="Background Image">
+            <img class='bg-img-home no-select' src="assets/img/home_chemprogram_img.webp" alt="Background Image">
         </section>
-        <section class="agenda">
-            <div class="agendar position">
-                <button class="btn-agendar btn ">Schedule</button>
-            </div>
-        </section>
-        <section class="brand color-brand position">
-            <h1 class="brand-title color-threme ">TechBioChem</h1>
-            <h2 class="border-styles text-center">Services</h2>
-        </section>
+        <div class="hero-copy">
+            <section class="agenda">
+                <div class="agendar position">
+                    <button class="btn-agendar btn no-select">Schedule</button>
+                </div>
+            </section>
+            <section class="brand color-brand position">
+                <h1 class="brand-title color-threme ">TechBioChem</h1>
+                <h2 class="border-styles text-center">Services</h2>
+            </section>
+        </div>
 
         <section class="perfil">
             <div class="perfil-image">
-                <img src="assets/img/wigor_img.webp" alt="Profile Picture">
+                <button class="perfil-trigger no-select" type="button" aria-label="Open profile links" aria-expanded="false">
+                    <img class="no-select" src="assets/img/wigor_img.webp" alt="Profile Picture">
+                </button>
             </div>
+
+            <div class="perfil-icons">
+                <a href="" class="perfil-icon devchem-icon no-select">
+                    <img class="icon-asset no-select" src="assets\icons\devchem_icon.svg" alt="GitHub Icon">
+                </a>
+                <a href="" class="perfil-icon book-icon no-select">
+                    <img class="icon-asset no-select" src="assets\icons\book_icon.svg" alt="GitHub Icon">
+                </a>
+                <a href="" class="perfil-icon molecul_search_icon no-select">
+                    <img class="icon-asset no-select" src="assets\icons\molecul_search_icon.svg" alt="GitHub Icon">
+                </a>
+                <a href="" class="perfil-icon gear_icon no-select">
+                    <img class="icon-asset no-select" src="assets\icons\gear_icon.svg" alt="GitHub Icon">
+                </a>
+            </div>
+
             <div class="perfil-info animated-text cursor-wrapper">
                 <p class="classical">
                     <span class="line" data-text="Hi, my name is Wigor,"></span>

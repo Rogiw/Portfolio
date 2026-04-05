@@ -75,24 +75,28 @@
   height: 200px;
   margin: 10px;
   opacity: 0.42;
+
 }
 
 .scheduled_text {
   position: absolute;
-  inset: 0;
+  inset: 24% 0 auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72%;
-  height: 42%;
-  margin: auto;
+
+  width: 95%;
+  height: 20%;
+
+  box-sizing: border-box;
   color: white;
   font-family: "Arial Black", Courier, monospace;
-  font-size: 1.2rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 100;
   text-align: center;
   white-space: nowrap;
+  text-transform: uppercase;
   transform: scaleY(1.8);
   pointer-events: none;
 }
@@ -191,6 +195,7 @@
   .scheduled_text {
     width: 74%;
     height: 22%;
+    padding: 0 8px;
     font-family: "Arial Black", Courier, monospace;
     font-size: 0.56rem;
     font-weight: 700;

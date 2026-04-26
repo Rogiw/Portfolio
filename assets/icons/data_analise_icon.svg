@@ -1,5 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
- <symbol id="data_analise-icon" viewBox="0 0 1607.92 1607.92">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg id="data_analise-icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="16.2206mm" height="16.2206mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1607.92 1607.92"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <defs>
   <style type="text/css">
    <![CDATA[
@@ -11,7 +16,7 @@
  </defs>
  <g id="Camada_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_2444421043616">
+  <g id="_2447962143840">
    <circle class="fil0" cx="803.96" cy="803.96" r="803.96"/>
    <g>
     <g>
@@ -61,5 +66,4 @@
    </g>
   </g>
  </g>
- </symbol>
 </svg>

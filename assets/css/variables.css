@@ -17,3 +17,10 @@
   --bg-icon: #000;
   --content-icon: white;
 }
+
+@media (max-width: 1100px) {
+  :root {
+    --font-brand: "old-english-five", "OldLondom", serif;
+    --font-display: Arial, Helvetica, sans-serif;
+  }
+}

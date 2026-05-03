@@ -34,6 +34,13 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 1100px) {
+  .schedule-modal h2,
+  .form-status {
+    font-weight: 900;
+  }
+}
+
 .schedule-form fieldset {
   display: flex;
   flex-direction: column;

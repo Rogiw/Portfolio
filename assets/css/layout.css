@@ -20,10 +20,18 @@ header nav {
 
 main {
   position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
+}
+
+@supports (height: 100dvh) {
+  main {
+    min-height: 100dvh;
+  }
 }
 
 .footer {
@@ -140,11 +148,13 @@ main {
 
   .footer-section h3 {
     font-size: 1.1rem;
+    font-weight: 900;
   }
 
   .footer-section h4 {
     margin-bottom: 10px;
     font-size: 0.85rem;
+    font-weight: 900;
   }
 
   .footer-section p {

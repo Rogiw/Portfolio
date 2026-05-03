@@ -1,0 +1,35 @@
+.content-page {
+  width: min(100% - 32px, 1000px);
+  margin: 48px auto;
+  color: white;
+}
+
+.content-page h1 {
+  margin-bottom: 24px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.content-card {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.content-card h2 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.content-card p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.content-card a {
+  color: #9ee7ff;
+}

@@ -171,5 +171,5 @@ main {
 @media (max-width: 420px) {
   .footer-container {
     grid-template-columns: 1fr;
-  }
+gi   }
 }

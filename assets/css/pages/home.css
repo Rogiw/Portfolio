@@ -196,7 +196,7 @@ body {
 
 @media (max-width: 1100px) and (max-height: 760px) {
   .hero-copy {
-    bottom: 9%;
+    bottom: 14%;
     gap: 6px;
   }
 }
@@ -278,5 +278,19 @@ body {
     max-width: min(56vw, 260px);
     margin-top: 18px;
     text-align: left;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 760px) {
+  .hero-copy {
+    bottom: 12%;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 640px) {
+  .hero-copy {
+    bottom: 18%;
+    gap: 8px;
   }
 }

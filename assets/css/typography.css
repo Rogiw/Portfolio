@@ -1,7 +1,11 @@
 /* Type styles and text utilities */
 .brand-title {
   font-family: var(--font-brand);
-  font-size: 8rem;
+  font-size: clamp(4rem, 12vw, 8rem);
+  line-height: 0.95;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .emphasis {
@@ -36,7 +40,7 @@
 .border-styles::after {
   content: "";
   display: inline-block;
-  width: 15rem;
+  width: min(15rem, 26vw);
   height: 3px;
   margin: 0 10px;
   vertical-align: bottom;
@@ -75,7 +79,7 @@
 
 @media (max-width: 1100px) {
   .brand-title {
-    font-size: 6rem;
+    font-size: clamp(4rem, 11vw, 6rem);
     line-height: 0.95;
   }
 
@@ -85,7 +89,7 @@
 
   .border-styles::before,
   .border-styles::after {
-    width: 10rem;
+    width: min(10rem, 20vw);
   }
 
   .classical {
@@ -95,7 +99,7 @@
 
 @media (max-width: 768px) {
   .brand-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.55rem, 13.4vw, 3.35rem);
     line-height: 0.95;
   }
 
@@ -113,7 +117,7 @@
 
   .border-styles::before,
   .border-styles::after {
-    width: 4rem;
+    width: min(4rem, 16vw);
   }
 
   .animated-text .line {
@@ -123,7 +127,7 @@
 
 @media (max-width: 768px) and (max-height: 640px) {
   .brand-title {
-    font-size: 3rem;
+    font-size: clamp(2.3rem, 12.6vw, 3rem);
   }
 
   .text-center {
@@ -132,6 +136,6 @@
 
   .border-styles::before,
   .border-styles::after {
-    width: 3rem;
+    width: min(3rem, 14vw);
   }
 }

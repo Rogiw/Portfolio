@@ -6,7 +6,7 @@ loadLab();
 
 async function loadLab() {
   try {
-    const response = await fetch(`${API_URL}/chem/lab`);
+    const response = await fetch(`${API_URL}/dev/lab`);
 
     if (!response.ok) {
       throw new Error(`Erro ${response.status}`);

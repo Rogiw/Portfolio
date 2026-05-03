@@ -6,7 +6,7 @@ loadProjects();
 
 async function loadProjects() {
     try {
-        const response = await fetch(`${API_URL}/chem/projects`);
+        const response = await fetch(`${API_URL}/dev/projects`);
 
         if (!response.ok) {
             throw new Error(`Erro ${response.status}`);

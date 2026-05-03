@@ -237,3 +237,13 @@
   cursor: wait;
   transform: none;
 }
+
+@media (max-width: 768px) {
+  .field-row {
+    padding: 8px 4px;
+  }
+
+  .field-row input {
+    padding-right: 28px;
+  }
+}

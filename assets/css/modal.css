@@ -34,12 +34,7 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 1100px) {
-  .schedule-modal h2,
-  .form-status {
-    font-weight: 900;
-  }
-}
+
 
 .schedule-form fieldset {
   display: flex;
@@ -58,7 +53,7 @@
   width: 100%;
   box-sizing: border-box;
   min-height: var(--row-height);
-  padding: 0 4px;
+  padding: 8px 4px;
   border-top: 1px solid var(--line);
   line-height: 1;
 }
@@ -113,7 +108,7 @@
   width: 100%;
   box-sizing: border-box;
   min-height: var(--row-height);
-  padding: 0 4px;
+  padding: 8px 4px;
   border-top: 1px solid var(--line);
   line-height: 1;
 }
@@ -240,8 +235,3 @@
   transform: none;
 }
 
-@media (max-width: 768px) {
-  .field-row {
-    padding: 8px 4px;
-  }
-}

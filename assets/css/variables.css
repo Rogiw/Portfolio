@@ -6,6 +6,11 @@
   --menu-hover: #ec268f;
   --icon-selected: #4b4b4d;
   --nickname-color: #a53692;
+
+  --font-brand: "OldLondom", serif;
+  --font-display: "Arial Black", "BBH-Bogle", Impact, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-classical: "Merriweather-Light", "Times New Roman", Times, serif;
 }
 
 .icon-colors {

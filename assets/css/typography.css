@@ -1,24 +1,24 @@
 /* Type styles and text utilities */
 .brand-title {
-  font-family: "OldLondom", serif;
+  font-family: var(--font-brand);
   font-size: 8rem;
 }
 
 .emphasis {
   color: var(--nickname-color);
-  font-family: "Arial Black", sans-serif;
+  font-family: var(--font-display);
   font-size: 3rem;
 }
 
 .subtle {
   color: rgb(185, 185, 185);
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 1.2rem;
   text-shadow: 2px 2px 4px black;
 }
 
 .classical {
-  font-family: "Merriweather-Light", "Times New Roman", Times, serif;
+  font-family: var(--font-classical);
   font-size: 3rem;
   font-weight: 300;
 }
@@ -70,6 +70,25 @@
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .brand-title {
+    font-size: 6rem;
+  }
+
+  .text-center {
+    margin: 18px auto;
+  }
+
+  .border-styles::before,
+  .border-styles::after {
+    width: 10rem;
+  }
+
+  .classical {
+    font-size: 2.2rem;
   }
 }
 

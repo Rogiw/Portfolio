@@ -184,9 +184,10 @@
             <form class="schedule-form" id="schedule-form" action="https://api.wigorrodrigues.com.br/schedule"
                 method="POST">
                 <fieldset>
-                    <label class="field-row" for="name"><span>Name:</span><input type="text" id="name" name="name"
+                    <label class="field-row" for="name"><span>Name:</span><input type="text" id="name" name="name" placeholder="type your name here"
                             required></label>
-                    <label class="field-row" for="email"><span>Email:</span><input type="email" id="email" name="email"
+                    <label class="field-row" for="number"><span>Contact Number:</span><input type="tel" name="phone" placeholder="(31) 99999-9999" required></label>
+                    <label class="field-row" for="email"><span>Email:</span><input type="email" id="email" name="email" placeholder="type email here"
                             required></label>
 
                     <label class="field-row" for="date"><span>Requeste data:</span><input type="date" id="date"
@@ -197,8 +198,10 @@
                     <legend class="field-row"><span>Services:</span></legend>
                     <label class="check"><input type="checkbox" name="services" value="consulting">
                         <span>Consulting</span></label>
-                    <label class="check"><input type="checkbox" name="services" value="project"> Project</label>
-                    <label class="check"><input type="checkbox" name="services" value="other"> Other</label>
+                    <label class="check"><input type="checkbox" name="services" value="project">
+                        <span>Project</span></label>
+                    <label class="check"><input type="checkbox" name="services" value="other">
+                        <span>Other</span></label>
                 </fieldset>
                 <fieldset>
                     <label class="select-row" for="subject"><span>Subject:</span>

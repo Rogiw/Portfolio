@@ -9,7 +9,7 @@ body {
 }
 
 .links {
-  color: var(--munu-hover);
+  color: var(--menu-hover);
 }
 
 .bg-img-home {
@@ -33,7 +33,7 @@ body {
 .hero-copy {
   position: absolute;
   right: 0;
-  bottom: 16%;
+  bottom: 4%;
   left: 0;
   z-index: 1;
   display: flex;
@@ -180,7 +180,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-copy {
-    bottom: 9%;
+    bottom: 4%;
     gap: 14px;
     width: calc(100% - 32px);
   }

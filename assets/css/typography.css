@@ -1,0 +1,97 @@
+/* Type styles and text utilities */
+.brand-title {
+  font-family: "OldLondom", serif;
+  font-size: 8rem;
+}
+
+.emphasis {
+  color: var(--nickname-color);
+  font-family: "Arial Black", sans-serif;
+  font-size: 3rem;
+}
+
+.subtle {
+  color: rgb(185, 185, 185);
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px black;
+}
+
+.classical {
+  font-family: "Merriweather-Light", "Times New Roman", Times, serif;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.text-center {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.color-brand {
+  color: var(--theme-text);
+}
+
+.border-styles::before,
+.border-styles::after {
+  content: "";
+  display: inline-block;
+  width: 15rem;
+  height: 3px;
+  margin: 0 10px;
+  vertical-align: bottom;
+  background-color: var(--theme-text);
+  overflow: hidden;
+}
+
+.animated-text .line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.animated-text .line::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: bottom;
+  background-color: var(--theme-text);
+  opacity: 0;
+  animation: blink 0.7s step-end;
+}
+
+.animated-text .line.typing::after {
+  opacity: 1;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-title {
+    font-size: 3.5rem;
+  }
+
+  .classical {
+    font-size: 1.4rem;
+  }
+
+  .emphasis {
+    font-size: 2rem;
+  }
+
+  .border-styles::before,
+  .border-styles::after {
+    width: 4rem;
+  }
+
+  .animated-text .line {
+    white-space: normal;
+  }
+}

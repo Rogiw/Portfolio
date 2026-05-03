@@ -2,7 +2,7 @@ header {
   position: relative;
 }
 
-nav {
+header nav {
   position: fixed;
   right: 0;
   z-index: 1;
@@ -26,16 +26,79 @@ main {
   min-height: 100vh;
 }
 
-footer {
-  min-height: 100vh;
-  padding: 20px;
+.footer {
+  width: 100%;
+  padding: 40px clamp(20px, 5vw, 72px) 20px;
   color: white;
-  text-align: center;
-  background-color: black;
+  background: #0d0d0d;
+  border-top: 2px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
 }
 
+.footer-container {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(150px, 1fr));
+  gap: 28px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin: 0 0 12px;
+  color: var(--theme-text);
+  font-family: "Arial Black", Courier, monospace;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  max-width: 360px;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #b8b8b8;
+}
+
+.footer-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section a {
+  color: #d7d7d7;
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: var(--theme-hover);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  max-width: 1180px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  border-top: 1px solid #222;
+  color: #888;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
 @media (max-width: 768px) {
-  nav {
+  header nav {
     gap: 8px;
     padding: 8px;
   }
@@ -44,8 +107,17 @@ footer {
     gap: 6px;
   }
 
-  footer {
+  .footer {
     min-height: auto;
-    padding: 40px 20px;
+    padding: 32px 20px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-section p {
+    max-width: none;
   }
 }

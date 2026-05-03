@@ -123,6 +123,12 @@
   cursor: pointer;
 }
 
+.select-row select,
+.select-row option {
+  color: black;
+  background-color: var(--paper);
+}
+
 .select-row::after {
   content: "";
   position: absolute;

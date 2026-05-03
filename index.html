@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/icons.css">
     <link rel="stylesheet" href="assets/css/pages/home.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
     <title>Portifolio</title>
 </head>
 
@@ -27,7 +28,7 @@
                     <use href="assets/icons/chem_mask-icon.svg#chem-mask-icon"></use>
                 </svg>
             </button>
-            <div class="submenu"> 
+            <div class="submenu">
                 <a href="pages/chem/lab.html">Lab</a>
                 <a href="pages/chem/projects.html"> Projects</a>
                 <a href="pages/chem/experiments.html">Experiments</a>
@@ -85,7 +86,7 @@
         <div class="hero-copy">
             <section class="agenda">
                 <div class="agendar position">
-                    <button class="btn-agendar btn no-select">Schedule</button>
+                    <button class="btn-agendar btn no-select" data-modal-open="schedule-modal">Schedule</button>
                 </div>
             </section>
             <section class="brand color-brand position">
@@ -139,6 +140,52 @@
             <a href="mailto:rogiwigor@gmail.com">Email</a>
         </div>
     </footer>
+    <dialog class="schedule-modal" id="schedule-modal">
+        <h2>Schedule</h2>
+        <div class="modal-content" id="content-modal">
+            <form class="schedule-form" id="schedule-form" action="https://api.wigorrodrigues.com.br/schedule"
+                method="POST">
+                <fieldset>
+                    <label class="field-row" for="name"><span>Name:</span><input type="text" id="name" name="name"
+                            required></label>
+                    <label class="field-row" for="email"><span>Email:</span><input type="email" id="email" name="email"
+                            required></label>
+
+                    <label class="field-row" for="date"><span>Requeste data:</span><input type="date" id="date"
+                            name="date"></label>
+
+                </fieldset>
+                <fieldset>
+                    <legend class="field-row"><span>Services:</span></legend>
+                    <label class="check"><input type="checkbox" name="services" value="consulting">
+                        <span>Consulting</span></label>
+                    <label class="check"><input type="checkbox" name="services" value="project"> Project</label>
+                    <label class="check"><input type="checkbox" name="services" value="other"> Other</label>
+                </fieldset>
+                <fieldset>
+                    <label class="select-row" for="subject"><span>Subject:</span>
+                        <select id="subject" name="subject" required>
+                            <option value="">Reason for contact</option>
+                            <option value="project">Project</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="question">Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label class="textarea-row" for="message"><span>Message:</span><textarea id="message" name="message" placeholder ="Have a project in mind? Send me a message and I'll get back to you soon."
+                            rows="4"></textarea></label>
+                </fieldset>
+                <div class="modal-actions">
+                    <button class="modal-close btn" type="button" data-modal-close>Cancel</button>
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+                <p class="form-status" aria-live="polite"></p>
+            </form>
+        </div>
+    </dialog>
+    <script src="assets/js/modal.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/typing_animation.js"></script>

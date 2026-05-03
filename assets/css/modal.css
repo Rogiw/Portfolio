@@ -1,0 +1,221 @@
+.schedule-modal {
+  --paper: rgb(207, 204, 191);
+  --line: rgb(0, 0, 0);
+  --row-height: 36px;
+
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(90vw, 440px);
+  max-height: 90vh;
+  padding: 0;
+  color: black;
+  background: var(--paper);
+  border-left: 10px solid black;
+  border-bottom: 5px solid black;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  padding: 0 24px 24px;
+  margin: 10px;
+}
+
+.schedule-modal h2 {
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: var(--paper);
+  border-bottom: 3px solid var(--line);
+  text-align: center;
+  font-family: "Arial Black", Courier, monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.schedule-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: var(--row-height);
+  padding: 0 4px;
+  border-top: 1px solid var(--line);
+  line-height: 1;
+}
+
+.field-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.field-row:first-child {
+  border-top: 0;
+}
+
+.field-row span {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+.field-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.schedule-form input,
+.schedule-form textarea {
+  color: black;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.schedule-form input {
+  height: 24px;
+  padding: 0 4px;
+}
+
+.schedule-form textarea {
+  width: 100%;
+  min-height: calc(var(--row-height) * 3);
+  padding: 4px;
+  line-height: var(--row-height);
+  resize: vertical;
+  color: black;
+}
+
+.select-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: var(--row-height);
+  padding: 0 4px;
+  border-top: 1px solid var(--line);
+  line-height: 1;
+}
+
+.select-row span {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+.select-row select {
+  flex: 1;
+  min-width: 0;
+  height: 32px;
+  padding: 0 28px 0 4px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-row::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid black;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  pointer-events: none;
+}
+
+.textarea-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 8px 4px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  box-sizing: border-box;
+}
+
+.textarea-row span {
+  font-weight: 700;
+}
+
+.schedule-form input:focus,
+.schedule-form textarea:focus,
+.schedule-form select:focus {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: var(--row-height);
+  line-height: 1;
+}
+
+.check input[type="checkbox"] {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 2px solid black;
+  background: transparent;
+  cursor: pointer;
+}
+
+.check input[type="checkbox"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: black;
+  transform: scale(0);
+  transition: transform 0.12s ease;
+}
+
+.check input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.form-status {
+  min-height: 20px;
+  margin-top: 12px;
+  color: black;
+  font-family: "Arial Black", Courier, monospace;
+  font-size: 0.85rem;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.form-status.is-success {
+  color: rgb(14, 92, 30);
+}
+
+.form-status.is-error {
+  color: rgb(130, 20, 20);
+}
+
+.schedule-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}

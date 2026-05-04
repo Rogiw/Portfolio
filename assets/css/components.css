@@ -23,7 +23,7 @@
 
   position: fixed;
   right: 0;
-  bottom: 10px;
+  bottom: 4px;
   z-index: 80;
   display: inline-flex;
   align-items: center;
@@ -116,6 +116,7 @@
 
     width: 84px;
     height: 110px;
+    bottom: 2px;
     margin: 6px;
     opacity: 0.36;
   }

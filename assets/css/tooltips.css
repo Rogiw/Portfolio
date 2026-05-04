@@ -114,8 +114,10 @@
 }
 
 .scheduled-hint {
+  --scheduled-hint-right: 28px;
+
   position: fixed;
-  right: 28px;
+  right: var(--scheduled-hint-right);
   bottom: 18px;
   z-index: 100000;
   max-width: min(240px, calc(100vw - 32px));
@@ -134,6 +136,10 @@
   pointer-events: none;
   transform: translateY(4px);
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+body:has(.scheduled.is-open) .scheduled-hint {
+  --scheduled-hint-right: 164px;
 }
 
 .scheduled-hint::after {
@@ -157,8 +163,12 @@
 
 @media (max-width: 768px) {
   .scheduled-hint {
-    right: 22px;
+    --scheduled-hint-right: 22px;
     bottom: 10px;
     font-size: 0.68rem;
+  }
+
+  body:has(.scheduled.is-open) .scheduled-hint {
+    --scheduled-hint-right: 96px;
   }
 }

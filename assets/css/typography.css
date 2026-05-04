@@ -80,6 +80,10 @@
   opacity: 1;
 }
 
+.animated-text .line.is-cleared {
+  display: none;
+}
+
 @keyframes blink {
   50% {
     opacity: 0;

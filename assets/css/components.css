@@ -19,6 +19,8 @@
 }
 
 .scheduled {
+  --scheduled-peek: 24px;
+
   position: fixed;
   right: 0;
   bottom: 10px;
@@ -30,7 +32,17 @@
   height: 200px;
   margin: 10px;
   opacity: 0.42;
+  touch-action: pan-y;
+  transform: translateX(calc(100% - var(--scheduled-peek)));
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
 
+.scheduled.is-open {
+  transform: translateX(0);
+}
+
+.scheduled.is-dragging {
+  transition: none;
 }
 
 .scheduled_text {
@@ -58,6 +70,14 @@
 
 .scheduled:hover {
   opacity: 1;
+}
+
+.scheduled.scheduled:hover {
+  transform: translateX(calc(100% - var(--scheduled-peek)));
+}
+
+.scheduled.is-open.scheduled:hover {
+  transform: translateX(0);
 }
 
 /* Buttons */
@@ -92,6 +112,8 @@
   }
 
   .scheduled {
+    --scheduled-peek: 18px;
+
     width: 84px;
     height: 110px;
     margin: 6px;

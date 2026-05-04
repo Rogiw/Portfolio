@@ -1,4 +1,4 @@
-[data-tooltip] {
+[data-tooltip]:not(.perfil-icon):not(.scheduled) {
   position: relative;
 }
 
@@ -6,7 +6,7 @@
 [data-tooltip]::after {
   position: absolute;
   left: 50%;
-  z-index: 120;
+  z-index: 100000;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -48,6 +48,39 @@
   transform: translate(-50%, 0);
 }
 
+[data-tooltip]:not(.perfil-icon):hover,
+[data-tooltip]:not(.perfil-icon):focus-visible {
+  z-index: 10000;
+}
+
+.perfil.is-open .perfil-icon[data-tooltip]:hover,
+.perfil.is-open .perfil-icon[data-tooltip]:focus-visible {
+  z-index: 10000;
+}
+
+.perfil-icon[data-tooltip]::before {
+  top: 50%;
+  bottom: auto;
+  left: calc(100% + 10px);
+  transform: translate(4px, -50%);
+}
+
+.perfil-icon[data-tooltip]::after {
+  top: 50%;
+  bottom: auto;
+  left: calc(100% + 4px);
+  border-width: 6px 6px 6px 0;
+  border-color: transparent black transparent transparent;
+  transform: translate(4px, -50%);
+}
+
+.perfil-icon[data-tooltip]:hover::before,
+.perfil-icon[data-tooltip]:hover::after,
+.perfil-icon[data-tooltip]:focus-visible::before,
+.perfil-icon[data-tooltip]:focus-visible::after {
+  transform: translate(0, -50%);
+}
+
 .side-menu [data-tooltip]::before {
   top: 50%;
   right: calc(100% + 10px);
@@ -77,5 +110,44 @@
   [data-tooltip]::before,
   [data-tooltip]::after {
     display: none;
+  }
+}
+
+.scheduled-hint {
+  position: fixed;
+  right: 16px;
+  bottom: 18px;
+  z-index: 100000;
+  max-width: min(240px, calc(100vw - 32px));
+  padding: 6px 9px;
+  color: white;
+  background: rgba(0, 0, 0, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  line-height: 1.2;
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+.scheduled-hint.is-visible,
+.scheduled:hover + .scheduled-hint,
+.scheduled:focus-visible + .scheduled-hint {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .scheduled-hint {
+    right: 12px;
+    bottom: 10px;
+    font-size: 0.68rem;
   }
 }

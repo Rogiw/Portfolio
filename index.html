@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/icons.css">
+    <link rel="stylesheet" href="assets/css/tooltips.css">
     <link rel="stylesheet" href="assets/css/pages/home.css">
     <link rel="stylesheet" href="assets/css/modal.css">
     <title>Portifolio</title>
@@ -24,7 +25,8 @@
 
         <nav class="side-menu"><!--Chem-->
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Chemistry"><!--Chem-->
+            <button class="icon icon-button icon-menu no-select" aria-label="Chemistry"
+                data-tooltip="Chemistry"><!--Chem-->
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/chem_mask-icon.svg#chem-mask-icon"></use>
                 </svg>
@@ -35,7 +37,8 @@
                 <a href="pages/chem/experiments.html">Experiments</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Programming"><!--Dev-->
+            <button class="icon icon-button icon-menu no-select" aria-label="Programming"
+                data-tooltip="Programming"><!--Dev-->
                 <svg class="icon-symbol">
                     <use href="assets/icons/terminal-icon.svg#terminal-icon"></use>
                 </svg>
@@ -45,7 +48,7 @@
                 <a href="pages/dev/projects.html">Projects</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Arts"><!--Art-->
+            <button class="icon icon-button icon-menu no-select" aria-label="Arts" data-tooltip="Arts"><!--Art-->
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/art_icon.svg#art-icon"></use>
                 </svg>
@@ -55,7 +58,7 @@
                 <a href="">Projects</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Analysis">
+            <button class="icon icon-button icon-menu no-select" aria-label="Analysis" data-tooltip="Analysis">
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/data_analise_icon.svg#data_analise_icon"></use>
                 </svg>
@@ -65,7 +68,7 @@
                 <a href="">Projecs</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Plan">
+            <button class="icon icon-button icon-menu no-select" aria-label="Plan" data-tooltip="Planning">
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/Excel-dark-icon.svg#Excel-dark-icon"></use>
                 </svg>
@@ -75,7 +78,7 @@
                 <a href="">Projects</a>
             </div>
         </nav>
-        <a href="pages/scheduled.html " aria-label="Analysis" class="scheduled no-select">
+        <a href="pages/scheduled.html " aria-label="Analysis" class="scheduled no-select" data-tooltip="Scheduled">
             <img class="no-select" src="assets\icons\schedule_no_text_icon.svg" alt="Agenda_icon"><span
                 class=" scheduled_text">Scheduled</span>
         </a>
@@ -105,17 +108,17 @@
             </div>
 
             <div class="perfil-icons">
-                <a href="" class="perfil-icon devchem-icon no-select">
+                <a href="" class="perfil-icon devchem-icon no-select" data-tooltip="Social media" target="_blank">
                     <img class="icon-asset no-select" src="assets\icons\devchem_icon.svg" alt="GitHub Icon">
                 </a>
                 <a href="https://1drv.ms/o/c/aa861b9b3b3e4fd5/IgDGGQkcULfZTbouOt8B3VVzAVbv18Jah4ejyt7kqgDaOXw?e=rKmiou"
-                    class="perfil-icon book-icon no-select">
+                    class="perfil-icon book-icon no-select" data-tooltip="Lab notebook" target="_blank">
                     <img class="icon-asset no-select" src="assets\icons\book_icon.svg" alt="GitHub Icon">
                 </a>
-                <a href="" class="perfil-icon molecul_search_icon no-select">
+                <a href="" class="perfil-icon molecul_search_icon no-select" data-tooltip="Articles" target="_blank">
                     <img class="icon-asset no-select" src="assets\icons\molecul_search_icon.svg" alt="GitHub Icon">
                 </a>
-                <a href="" class="perfil-icon gear_icon no-select">
+                <a href="" class="perfil-icon gear_icon no-select" data-tooltip="Settings" target="_blank">
                     <img class="icon-asset no-select" src="assets\icons\gear_icon.svg" alt="GitHub Icon">
                 </a>
             </div>

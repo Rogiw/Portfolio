@@ -97,6 +97,10 @@
     font-weight: 900;
   }
 
+  .emphasis-very-light {
+    font-size: 1.2rem;
+  }
+
   .brand-title {
     font-size: clamp(4rem, 11vw, 6rem);
     line-height: 0.95;
@@ -136,6 +140,10 @@
 
   .emphasis-light {
     font-size: 1.35rem;
+  }
+
+  .emphasis-very-light {
+    font-size: 0.95rem;
   }
 
   .border-styles::before,

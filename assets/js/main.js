@@ -44,15 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2200);
 
     scheduled.addEventListener("click", (event) => {
-      event.preventDefault();
       introDone = true;
 
       if (hasDragged) {
+        event.preventDefault();
         hasDragged = false;
         return;
       }
 
-      setScheduledOpen(!scheduled.classList.contains("is-open"));
+      if (!scheduled.classList.contains("is-open")) {
+        event.preventDefault();
+        setScheduledOpen(true);
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!scheduled.classList.contains("is-open")) return;
+
+      if (!scheduled.contains(event.target)) {
+        setScheduledOpen(false);
+      }
     });
 
     scheduled.addEventListener("pointerdown", (event) => {

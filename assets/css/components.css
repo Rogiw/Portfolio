@@ -112,7 +112,7 @@
   }
 
   .scheduled {
-    --scheduled-peek: 18px;
+    --scheduled-peek: 10px;
 
     width: 84px;
     height: 110px;

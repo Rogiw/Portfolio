@@ -115,7 +115,7 @@
 
 .scheduled-hint {
   position: fixed;
-  right: 16px;
+  right: 28px;
   bottom: 18px;
   z-index: 100000;
   max-width: min(240px, calc(100vw - 32px));
@@ -157,7 +157,7 @@
 
 @media (max-width: 768px) {
   .scheduled-hint {
-    right: 12px;
+    right: 22px;
     bottom: 10px;
     font-size: 0.68rem;
   }

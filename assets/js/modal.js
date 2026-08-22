@@ -44,6 +44,16 @@ if (scheduleForm) {
     }
 
     const formData = new FormData(scheduleForm);
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      phone: String(formData.get("phone") || ""),
+      deadline: String(formData.get("date") || "") || null,
+      subject: String(formData.get("subject") || ""),
+      services: formData.getAll("services").map((value) => String(value)),
+      message: String(formData.get("message") || ""),
+      website: String(formData.get("website") || ""),
+    };
 
     if (status) {
       status.textContent = "Sending...";
@@ -57,10 +67,11 @@ if (scheduleForm) {
 
     try {
       const response = await fetch(scheduleForm.action, {
-        method: scheduleForm.method,
-        body: formData,
+        method: "POST",
+        body: JSON.stringify(payload),
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/json",
         },
       });
 

@@ -215,12 +215,12 @@
     <dialog class="schedule-modal" id="schedule-modal">
         <h2>Contact me</h2>
         <div class="modal-content" id="content-modal">
-            <form class="schedule-form" id="schedule-form" action="https://api.wigorrodrigues.com.br/schedule"
+            <form class="schedule-form" id="schedule-form" action="https://api.wigorrodrigues.com.br/api/contact"
                 method="POST">
                 <fieldset>
                     <label class="field-row" for="name"><span>Name:</span><input type="text" id="name" name="name"
                             placeholder="type your name here" required></label>
-                    <label class="field-row" for="phone"><span>tel:</span><input id="phon" type="tel" name="phone"
+                    <label class="field-row" for="phone"><span>tel:</span><input id="phone" type="tel" name="phone"
                             placeholder="(31) 99999-9999" required></label>
                     <label class="field-row" for="email"><span>Email:</span><input type="email" id="email" name="email"
                             placeholder="type email here" required></label>
@@ -254,6 +254,10 @@
                             placeholder="Have a project in mind? Send me a message and I'll get back to you soon."
                             rows="4"></textarea></label>
                 </fieldset>
+                <div class="contact-trap" aria-hidden="true">
+                    <label for="website">Website<input id="website" name="website" type="text" tabindex="-1"
+                            autocomplete="off"></label>
+                </div>
                 <div class="modal-actions">
                     <button class="modal-close btn" type="button" data-modal-close>Cancel</button>
                     <button class="btn" type="submit">Submit</button>

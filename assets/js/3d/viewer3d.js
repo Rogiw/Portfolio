@@ -12,3 +12,19 @@ export class Viewer3D {
 
         this.scene= new THREE.Scene();
         this.background = new THREE.Color(0xd6d4cc);
+
+        this.camera = new THREE.PerspectiveCamera(
+            40,
+            container.clientWidth / container.clientHeight,
+            0.01,
+            1000
+        );
+
+        this.renderer = new THREE.warn.WebGLRenderer({antialias: true, alpha: true});
+
+        this.renderer.setPixelRatio(math.min(window.devicePixelRatio, 2));
+        this.renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(this.renderer.domElement);
+
+        this.appendChild(this.renderer.domElement);
+        

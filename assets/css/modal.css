@@ -248,6 +248,16 @@
   color: rgb(130, 20, 20);
 }
 
+.contact-trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .schedule-form button:disabled {
   opacity: 0.65;
   cursor: wait;

@@ -17,127 +17,128 @@
     <link rel="stylesheet" href="assets/css/tooltips.css">
     <link rel="stylesheet" href="assets/css/pages/home.css">
     <link rel="stylesheet" href="assets/css/modal.css">
-    <title>Portifolio</title>
+    <title data-i18n="page_title">Portfolio</title>
 </head>
 
 <body>
     <header>
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="Mudar idioma para português">PT</button>
 
         <nav class="side-menu"><!--Chem-->
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Chemistry"
-                data-tooltip="Chemistry"><!--Chem-->
+            <button class="icon icon-button icon-menu no-select" aria-label="Chemistry" data-i18n-aria-label="chemistry"
+                data-tooltip="Chemistry" data-i18n-tooltip="chemistry"><!--Chem-->
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/chem_mask-icon.svg#chem-mask-icon"></use>
                 </svg>
             </button>
             <div class="submenu">
-                <a href="pages/chem/lab.html">Lab</a>
-                <a href="pages/chem/projects.html"> Projects</a>
-                <a href="pages/chem/experiments.html">Experiments</a>
+                <a href="pages/chem/lab.html" data-i18n="lab">Lab</a>
+                <a href="pages/chem/projects.html" data-i18n="projects">Projects</a>
+                <a href="pages/chem/experiments.html" data-i18n="experiments">Experiments</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Programming"
-                data-tooltip="Programming"><!--Dev-->
+            <button class="icon icon-button icon-menu no-select" aria-label="Programming" data-i18n-aria-label="programming"
+                data-tooltip="Programming" data-i18n-tooltip="programming"><!--Dev-->
                 <svg class="icon-symbol">
                     <use href="assets/icons/terminal-icon.svg#terminal-icon"></use>
                 </svg>
             </button>
             <div class="submenu">
-                <a href="pages/dev/lab.html">Lab</a>
-                <a href="pages/dev/projects.html">Projects</a>
+                <a href="pages/dev/lab.html" data-i18n="lab">Lab</a>
+                <a href="pages/dev/projects.html" data-i18n="projects">Projects</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Arts" data-tooltip="Arts"><!--Art-->
+            <button class="icon icon-button icon-menu no-select" aria-label="Arts" data-i18n-aria-label="arts" data-tooltip="Arts" data-i18n-tooltip="arts"><!--Art-->
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/art_icon.svg#art-icon"></use>
                 </svg>
             </button>
             <div class="submenu">
-                <a href="https://www.instagram.com/wigor.png/">Arts</a>
-                <a href="">Projects</a>
+                <a href="https://www.instagram.com/wigor.png/" data-i18n="arts">Arts</a>
+                <a href="" data-i18n="projects">Projects</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Analysis" data-tooltip="Analysis">
+            <button class="icon icon-button icon-menu no-select" aria-label="Analysis" data-i18n-aria-label="analysis" data-tooltip="Analysis" data-i18n-tooltip="analysis">
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/data_analise_icon.svg#data_analise_icon"></use>
                 </svg>
             </button>
             <div class="submenu">
-                <a href="">Labs</a>
-                <a href="">Projecs</a>
+                <a href="" data-i18n="labs">Labs</a>
+                <a href="" data-i18n="projects">Projects</a>
             </div>
 
-            <button class="icon icon-button icon-menu no-select" aria-label="Plan" data-tooltip="Planning">
+            <button class="icon icon-button icon-menu no-select" aria-label="Planning" data-i18n-aria-label="planning" data-tooltip="Planning" data-i18n-tooltip="planning">
                 <svg class="icon-symbol chem">
                     <use href="assets/icons/Excel-dark-icon.svg#Excel-dark-icon"></use>
                 </svg>
             </button>
             <div class="submenu">
-                <a href="">Lab</a>
-                <a href="">Projects</a>
+                <a href="" data-i18n="lab">Lab</a>
+                <a href="" data-i18n="projects">Projects</a>
             </div>
         </nav>
-        <a href="pages/scheduled.html" aria-label="Open scheduled page" class="scheduled no-select"
-            aria-expanded="false">
+        <button type="button" aria-label="Open your private schedule" data-i18n-aria-label="open_private_schedule" class="scheduled no-select"
+            aria-expanded="false" data-modal-open="client-schedule-modal">
             <img class="no-select" src="assets\icons\schedule_no_text_icon.svg" alt="Agenda_icon"><span
-                class=" scheduled_text">Scheduled</span>
-        </a>
-        <span class="scheduled-hint" aria-hidden="true">Click here to see your schedules</span>
+                class=" scheduled_text" data-i18n="scheduled">Scheduled</span>
+        </button>
+        <span class="scheduled-hint" aria-hidden="true" data-i18n="scheduled_hint">Click here to see your schedules</span>
     </header>
     <main>
         <section class="background-img">
-            <img class='bg-img-home no-select' src="assets/img/home_chemprogram_img.webp" alt="Background Image">
+            <img class='bg-img-home no-select' src="assets/img/home_chemprogram_img.webp" alt="Background image" data-i18n-alt="background_image">
         </section>
         <div class="hero-copy">
             <section class="agenda">
                 <div class="agendar position">
-                    <button class="btn-agendar btn no-select" data-modal-open="schedule-modal">Contact me</button>
+                    <button class="btn-agendar btn no-select" data-modal-open="schedule-modal" data-i18n="contact_me">Contact me</button>
                 </div>
             </section>
             <section class="brand color-brand position">
                 <h1 class="brand-title">TechBioChem</h1>
-                <h2 class="border-styles text-center">Services</h2>
+                <h2 class="border-styles text-center" data-i18n="services_heading">Services</h2>
             </section>
         </div>
 
         <section class="perfil">
             <div class="perfil-image">
-                <button class="perfil-trigger no-select" type="button" aria-label="Open profile links"
+                <button class="perfil-trigger no-select" type="button" aria-label="Open profile links" data-i18n-aria-label="open_profile"
                     aria-expanded="false">
-                    <img class="no-select" src="assets/img/wigor_brand.png" alt="Profile Picture">
+                    <img class="no-select" src="assets/img/wigor_brand.png" alt="Profile picture" data-i18n-alt="profile_picture">
                 </button>
             </div>
 
             <div class="perfil-icons">
-                <a href="" class="perfil-icon devchem-icon no-select" data-tooltip="Social media" target="_blank">
-                    <img class="icon-asset no-select" src="assets\icons\devchem_icon.svg" alt="GitHub Icon">
+                <a href="" class="perfil-icon devchem-icon no-select" data-tooltip="Social media" data-i18n-tooltip="social_media" target="_blank">
+                    <img class="icon-asset no-select" src="assets\icons\devchem_icon.svg" alt="Social media" data-i18n-alt="social_media">
                 </a>
                 <a href="https://1drv.ms/o/c/aa861b9b3b3e4fd5/IgDGGQkcULfZTbouOt8B3VVzAVbv18Jah4ejyt7kqgDaOXw?e=rKmiou"
-                    class="perfil-icon book-icon no-select" data-tooltip="Lab notebook" target="_blank">
-                    <img class="icon-asset no-select" src="assets\icons\book_icon.svg" alt="GitHub Icon">
+                    class="perfil-icon book-icon no-select" data-tooltip="Lab notebook" data-i18n-tooltip="lab_notebook" target="_blank">
+                    <img class="icon-asset no-select" src="assets\icons\book_icon.svg" alt="Lab notebook" data-i18n-alt="lab_notebook">
                 </a>
-                <a href="" class="perfil-icon molecul_search_icon no-select" data-tooltip="Articles" target="_blank">
-                    <img class="icon-asset no-select" src="assets\icons\molecul_search_icon.svg" alt="GitHub Icon">
+                <a href="" class="perfil-icon molecul_search_icon no-select" data-tooltip="Articles" data-i18n-tooltip="articles" target="_blank">
+                    <img class="icon-asset no-select" src="assets\icons\molecul_search_icon.svg" alt="Articles" data-i18n-alt="articles">
                 </a>
-                <a href="" class="perfil-icon gear_icon no-select" data-tooltip="Settings" target="_blank">
-                    <img class="icon-asset no-select" src="assets\icons\gear_icon.svg" alt="GitHub Icon">
+                <a href="" class="perfil-icon gear_icon no-select" data-tooltip="Settings" data-i18n-tooltip="settings" target="_blank">
+                    <img class="icon-asset no-select" src="assets\icons\gear_icon.svg" alt="Settings" data-i18n-alt="settings">
                 </a>
             </div>
 
             <div class="perfil-info animated-text cursor-wrapper">
                 <p class="classical">
-                    <span class="line" data-text="Hi, my name is Wigor,"></span>
-                    <span class="line" data-text="also known as"></span>
+                    <span class="line" data-text="Hi, my name is Wigor," data-i18n-data-text="intro_name"></span>
+                    <span class="line" data-text="also known as" data-i18n-data-text="intro_alias"></span>
                     <span class="line emphasis" data-text="White"></span>
-                    <span class="line emphasis-very-light" data-text="I build solutions at the intersection of"
+                    <span class="line emphasis-very-light" data-text="I build solutions at the intersection of" data-i18n-data-text="intro_build"
                         data-clear-group="build"></span>
-                    <span class="line emphasis-very-light" data-text="chemistry and technology"
+                    <span class="line emphasis-very-light" data-text="chemistry and technology" data-i18n-data-text="intro_fields"
                         data-clear-group="build" data-clear-after></span>
 
                     <a href="https://resume.wigorrodrigues.com.br/" class='links' target="_blank"><span
                             class="line subtle"
-                            data-text="For see more about me, access my resume by click here"></span></a>
+                            data-text="To learn more about me, click here to view my résumé" data-i18n-data-text="intro_resume"></span></a>
 
                 </p>
             </div>
@@ -148,20 +149,20 @@
     </section>
     <section class="marketplace-banner" aria-labelledby="marketplace-banner-title">
         <div class="marketplace-banner__content">
-            <p class="marketplcace-banner__eyebrow">Support this project</p>
-            <h2 class="marketplace-banner-title" id="marketplace-banner-title">Marketplaces best picks and buying groups</h2>
-            <p class="marketplace-banner__text">
+            <p class="marketplcace-banner__eyebrow" data-i18n="support_project">Support this project</p>
+            <h2 class="marketplace-banner-title" id="marketplace-banner-title" data-i18n="marketplace_title">Top marketplace picks and buying groups</h2>
+            <p class="marketplace-banner__text" data-i18n="marketplace_text">
                 A curated strip with products, group-buy ideas and recommendations for chemistry, programming, data analysis and automation enthusiasts. Check out the best picks and join the buying groups to get exclusive deals and discounts on essential tools and resources.
             </p>
         </div>
         <div class="marketplaces-banner__cardas">
             <article class="market-card">
-                <img src="assets/img/marketplace_chemistry.webp" alt="Chemistry Marketplace" class="market-card__image">
+                <img src="assets/img/marketplace_chemistry.webp" alt="Chemistry marketplace" data-i18n-alt="chemistry_marketplace" class="market-card__image">
                 <div class="market-card__content">
             </article>
             <div class="marketplaces-banner__cardas">
             <article class="market-card">
-                <img src="assets/img/marketplace_chemistry.webp" alt="Chemistry Marketplace" class="market-card__image">
+                <img src="assets/img/marketplace_chemistry.webp" alt="Chemistry marketplace" data-i18n-alt="chemistry_marketplace" class="market-card__image">
                 <div class="market-card__content">
             </article>
         </div>
@@ -171,87 +172,91 @@
         <div class="footer-container">
             <section class="footer-section footer-brand">
                 <h3>Wigor Rodrigues</h3>
-                <p>TechBioChem portfolio for chemistry, programming, data analysis and automation projects.</p>
+                <p data-i18n="portfolio_description">TechBioChem portfolio for chemistry, programming, data analysis and automation projects.</p>
             </section>
 
-            <nav class="footer-section footer-nav" aria-label="Footer navigation">
-                <h4>Navigation</h4>
+            <nav class="footer-section footer-nav" aria-label="Footer navigation" data-i18n-aria-label="footer_navigation">
+                <h4 data-i18n="navigation">Navigation</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/chem/lab.html">Chem Lab</a></li>
-                    <li><a href="pages/chem/projects.html">Chem Projects</a></li>
-                    <li><a href="pages/dev/projects.html">Dev Projects</a></li>
+                    <li><a href="index.html" data-i18n="home">Home</a></li>
+                    <li><a href="pages/chem/lab.html" data-i18n="chem_lab">Chem Lab</a></li>
+                    <li><a href="pages/chem/projects.html" data-i18n="chem_projects">Chem Projects</a></li>
+                    <li><a href="pages/dev/projects.html" data-i18n="dev_projects">Dev Projects</a></li>
                 </ul>
             </nav>
 
             <section class="footer-section">
-                <h4>Focus Areas</h4>
+                <h4 data-i18n="focus_areas">Focus areas</h4>
                 <ul>
-                    <li>Chemistry</li>
-                    <li>Programming</li>
-                    <li>Data Analysis</li>
-                    <li>Automation</li>
+                    <li data-i18n="chemistry">Chemistry</li>
+                    <li data-i18n="programming">Programming</li>
+                    <li data-i18n="data_analysis">Data analysis</li>
+                    <li data-i18n="automation">Automation</li>
                 </ul>
             </section>
 
             <section class="footer-section footer-contact">
-                <h4>Contact</h4>
+                <h4 data-i18n="contact">Contact</h4>
                 <ul>
                     <li><a href="mailto:rogiwigor@gmail.com">rogiwigor@gmail.com</a></li>
                     <li><a href="https://github.com/Rogiw" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="https://www.linkedin.com/in/wigorrodrigues/" target="_blank"
                             rel="noopener noreferrer">LinkedIn</a></li>
                     <li><a href="https://resume.wigorrodrigues.com.br/" target="_blank"
-                            rel="noopener noreferrer">Resume</a></li>
+                            rel="noopener noreferrer" data-i18n="resume">Résumé</a></li>
                 </ul>
             </section>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Wigor Rodrigues. All rights reserved.</p>
+            <p>© 2026 Wigor Rodrigues. <span data-i18n="rights_reserved">All rights reserved.</span></p>
         </div>
     </footer>
 
     <dialog class="schedule-modal" id="schedule-modal">
-        <h2>Contact me</h2>
+        <h2 data-i18n="contact_me">Contact me</h2>
         <div class="modal-content" id="content-modal">
             <form class="schedule-form" id="schedule-form" action="https://api.wigorrodrigues.com.br/api/contact"
                 method="POST">
                 <fieldset>
-                    <label class="field-row" for="name"><span>Name:</span><input type="text" id="name" name="name"
-                            placeholder="type your name here" required></label>
-                    <label class="field-row" for="phone"><span>tel:</span><input id="phone" type="tel" name="phone"
+                    <label class="field-row" for="name"><span data-i18n="name">Name:</span><input type="text" id="name" name="name"
+                            placeholder="Type your name here" data-i18n-placeholder="name_placeholder" required></label>
+                    <label class="field-row" for="phone"><span data-i18n="phone">tel:</span><input id="phone" type="tel" name="phone"
                             placeholder="(31) 99999-9999" required></label>
-                    <label class="field-row" for="email"><span>Email:</span><input type="email" id="email" name="email"
-                            placeholder="type email here" required></label>
+                    <label class="field-row" for="email"><span data-i18n="email">Email:</span><input type="email" id="email" name="email"
+                            placeholder="Type your email here" data-i18n-placeholder="email_placeholder" required></label>
 
-                    <label class="field-row" for="date"><span>Deadline:</span><input type="date" id="date"
+                    <label class="field-row" for="date"><span data-i18n="deadline">Deadline:</span><input type="date" id="date"
                             name="date"></label>
 
                 </fieldset>
                 <fieldset>
-                    <legend class="field-row"><span>Services:</span></legend>
+                    <legend class="field-row"><span data-i18n="services">Services:</span></legend>
                     <label class="check"><input type="checkbox" name="services" value="consulting">
-                        <span>Consulting</span></label>
+                        <span data-i18n="consulting">Consulting</span></label>
                     <label class="check"><input type="checkbox" name="services" value="project">
-                        <span>Project</span></label>
+                        <span data-i18n="project">Project</span></label>
+                    <label class="check"><input type="checkbox" name="services" value="buy_sell">
+                        <span data-i18n="purchase_sale">Purchase / sale</span></label>
                     <label class="check"><input type="checkbox" name="services" value="other">
-                        <span>Other</span></label>
+                        <span data-i18n="other">Other</span></label>
                 </fieldset>
                 <fieldset>
-                    <label class="select-row" for="subject"><span>Subject:</span>
+                    <label class="select-row" for="subject"><span data-i18n="subject">Subject:</span>
                         <select id="subject" name="subject" required>
-                            <option value="">Reason for contact</option>
-                            <option value="project">Project</option>
-                            <option value="freelance">Freelance</option>
-                            <option value="question">Question</option>
-                            <option value="other">Other</option>
+                            <option value="" data-i18n="contact_reason">Reason for contact</option>
+                            <option value="project" data-i18n="project">Project</option>
+                            <option value="freelance" data-i18n="freelance">Freelance</option>
+                            <option value="question" data-i18n="question">Question</option>
+                            <option value="business" data-i18n="business">Business / purchase and sale</option>
+                            <option value="proposal" data-i18n="proposal">Proposal / partnership</option>
+                            <option value="other" data-i18n="other">Other</option>
                         </select>
                     </label>
                 </fieldset>
                 <fieldset>
-                    <label class="textarea-row" for="message"><span>Message:</span><textarea id="message" name="message"
-                            placeholder="Have a project in mind? Send me a message and I'll get back to you soon."
+                    <label class="textarea-row" for="message"><span data-i18n="message">Message:</span><textarea id="message" name="message"
+                            placeholder="Have a project in mind? Send me a message and I'll get back to you soon." data-i18n-placeholder="message_placeholder"
                             rows="4"></textarea></label>
                 </fieldset>
                 <div class="contact-trap" aria-hidden="true">
@@ -259,14 +264,49 @@
                             autocomplete="off"></label>
                 </div>
                 <div class="modal-actions">
-                    <button class="modal-close btn" type="button" data-modal-close>Cancel</button>
-                    <button class="btn" type="submit">Submit</button>
+                    <button class="modal-close btn" type="button" data-modal-close data-i18n="cancel">Cancel</button>
+                    <button class="btn" type="submit" data-i18n="submit">Submit</button>
                 </div>
                 <p class="form-status" aria-live="polite"></p>
             </form>
         </div>
     </dialog>
+    <dialog class="schedule-modal client-schedule-modal" id="client-schedule-modal">
+        <h2 data-i18n="your_schedule">Your schedule</h2>
+        <div class="modal-content client-schedule-content">
+            <p class="schedule-intro" data-i18n="schedule_intro">Only your appointments with Wigor appear here.</p>
+            <form class="schedule-access-form" id="schedule-access-form">
+                <label class="field-row" for="schedule-access-code">
+                    <span data-i18n="private_code">Private code:</span>
+                    <input id="schedule-access-code" name="access-code" type="password"
+                        autocomplete="off" placeholder="Received by email" data-i18n-placeholder="private_code_placeholder">
+                </label>
+                <div class="modal-actions schedule-access-actions">
+                    <button class="modal-close btn" type="button" data-modal-close data-i18n="close">Close</button>
+                    <button class="btn" type="submit" data-i18n="open_agenda">Open agenda</button>
+                </div>
+            </form>
+            <p class="form-status" id="schedule-status" aria-live="polite"></p>
+            <section class="schedule-sheet" aria-label="Private client agenda" data-i18n-aria-label="private_client_agenda">
+                <div class="schedule-sheet__heading">
+                    <span class="schedule-sheet__label" data-i18n="personal_agenda">Personal agenda</span>
+                    <p class="schedule-client-name" id="schedule-client-name" aria-live="polite"></p>
+                </div>
+                <ol class="appointment-list" id="appointment-list" aria-label="Your appointments" data-i18n-aria-label="your_appointments"></ol>
+                <section class="offer-agenda" id="offer-agenda" aria-labelledby="offer-agenda-title">
+                    <h3 id="offer-agenda-title" data-i18n="proposals_business">Proposals &amp; business</h3>
+                    <ol class="offer-list" id="offer-list" aria-label="Your proposal threads" data-i18n-aria-label="your_proposal_threads"></ol>
+                </section>
+            </section>
+            <div class="modal-actions schedule-session-actions">
+                <button class="modal-close btn" type="button" data-modal-close data-i18n="close">Close</button>
+                <button class="btn schedule-forget" type="button" id="schedule-forget" data-i18n="forget_access">Forget access</button>
+            </div>
+        </div>
+    </dialog>
+    <script src="assets/js/language.js"></script>
     <script src="assets/js/modal.js"></script>
+    <script src="assets/js/client_schedule.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/typing_animation.js"></script>

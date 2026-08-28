@@ -1,3 +1,5 @@
+const translateSite = (key) => window.siteI18n?.t(key) || key;
+
 document.querySelectorAll('[data-modal-open]').forEach((button) => {
     const modalId = button.dataset.modalOpen;
     const modal = document.getElementById(modalId);
@@ -34,6 +36,16 @@ const scheduleForm = document.getElementById("schedule-form");
 if (scheduleForm) {
   const status = scheduleForm.querySelector(".form-status");
   const submitButton = scheduleForm.querySelector('button[type="submit"]');
+  const subjectField = scheduleForm.querySelector('[name="subject"]');
+  const messageField = scheduleForm.querySelector('[name="message"]');
+
+  const syncProposalRequirements = () => {
+    if (!subjectField || !messageField) return;
+    messageField.required = subjectField.value === "business" || subjectField.value === "proposal";
+  };
+
+  subjectField?.addEventListener("change", syncProposalRequirements);
+  syncProposalRequirements();
 
   scheduleForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -56,13 +68,13 @@ if (scheduleForm) {
     };
 
     if (status) {
-      status.textContent = "Sending...";
+      status.textContent = translateSite("contact_sending");
       status.className = "form-status is-pending";
     }
 
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
+      submitButton.textContent = translateSite("contact_sending");
     }
 
     try {
@@ -79,21 +91,29 @@ if (scheduleForm) {
         throw new Error("Form request failed");
       }
 
+      const result = await response.json();
+      if (typeof result.schedule_token === "string" && result.schedule_token.length >= 32) {
+        localStorage.setItem("wigor_schedule_token", result.schedule_token);
+        window.dispatchEvent(new CustomEvent("schedule-token-updated", {
+          detail: { token: result.schedule_token },
+        }));
+      }
+
       scheduleForm.reset();
 
       if (status) {
-        status.textContent = "Sent successfully";
+        status.textContent = translateSite("contact_sent");
         status.className = "form-status is-success";
       }
     } catch (error) {
       if (status) {
-        status.textContent = "Could not send. Please try again.";
+        status.textContent = translateSite("contact_failed");
         status.className = "form-status is-error";
       }
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = "Submit";
+        submitButton.textContent = translateSite("submit");
       }
     }
   });

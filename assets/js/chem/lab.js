@@ -1,6 +1,7 @@
 const API_URL = "https://api.wigorrodrigues.com.br";
 
 const content = document.querySelector("#lab-content");
+const t = (key) => window.siteI18n?.t(key) || key;
 
 loadLab();
 
@@ -16,13 +17,13 @@ async function loadLab() {
     renderLab(data.lab || []);
   } catch (error) {
     console.error("Erro ao carregar o lab:", error);
-    content.innerHTML = "<p>Desculpe, ocorreu um erro ao carregar o lab.</p>";
+    content.innerHTML = `<p data-i18n="lab_error">${t("lab_error")}</p>`;
   }
 }
 
 function renderLab(items) {
   if (items.length === 0) {
-    content.innerHTML = "<p>Nenhum lab encontrado.</p>";
+    content.innerHTML = `<p data-i18n="no_lab">${t("no_lab")}</p>`;
     return;
   }
 

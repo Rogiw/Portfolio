@@ -8,6 +8,7 @@
   margin: auto;
   width: min(90vw, 440px);
   max-height: 90vh;
+  box-sizing: border-box;
   padding: 0;
   color: black;
   background: var(--paper);
@@ -241,7 +242,7 @@
 }
 
 .form-status.is-success {
-  color: rgb(14, 92, 30);
+  color: var(--theme-hover);
 }
 
 .form-status.is-error {
@@ -262,5 +263,410 @@
   opacity: 0.65;
   cursor: wait;
   transform: none;
+}
+
+.client-schedule-modal {
+  width: min(90vw, 440px);
+  background-image:
+    linear-gradient(90deg, transparent 0 25px, rgba(148, 68, 152, 0.38) 26px 27px, transparent 28px),
+    repeating-linear-gradient(0deg, transparent 0 35px, rgba(0, 0, 0, 0.16) 36px 37px);
+}
+
+.client-schedule-content {
+  min-height: 330px;
+  padding-left: 30px;
+}
+
+.schedule-intro {
+  margin: 0 4px 14px;
+  line-height: 1.45;
+}
+
+.schedule-access-form {
+  margin-bottom: 12px;
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+}
+
+.client-schedule-modal[data-agenda-open="true"] .schedule-access-form,
+.client-schedule-modal:not([data-agenda-open="true"]) .schedule-sheet,
+.client-schedule-modal:not([data-agenda-open="true"]) .schedule-session-actions {
+  display: none;
+}
+
+.schedule-access-form input {
+  flex: 1;
+  min-width: 0;
+  color: black;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font: inherit;
+}
+
+.schedule-access-actions {
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.schedule-client-name {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.schedule-sheet {
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+}
+
+.schedule-sheet__heading {
+  padding: 10px 4px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.schedule-sheet__label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.schedule-session-actions {
+  flex-wrap: wrap;
+}
+
+.schedule-session-actions .btn {
+  margin: 0;
+}
+
+.appointment-list {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.appointment-card {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.appointment-card:last-child {
+  border-bottom: 0;
+}
+
+.appointment-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 5px;
+}
+
+.appointment-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.appointment-card p {
+  margin: 6px 0 0;
+  line-height: 1.35;
+}
+
+.appointment-card__date {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-self: start;
+  padding: 5px 3px;
+  border: 2px solid black;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.appointment-card__weekday,
+.appointment-card__month {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+}
+
+.appointment-card__day {
+  margin: 3px 0;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+}
+
+.appointment-card__time {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.appointment-card__details {
+  min-width: 0;
+}
+
+.appointment-status {
+  flex: 0 0 auto;
+  padding: 3px 6px;
+  color: black;
+  border: 1px solid var(--theme-hover);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.appointment-list__empty {
+  min-height: 108px;
+  padding: 26px 8px;
+  line-height: 1.5;
+}
+
+.schedule-sheet:has(.offer-agenda:not([hidden])) .appointment-list__empty {
+  min-height: 0;
+  padding: 14px 8px;
+}
+
+.offer-agenda[hidden] {
+  display: none;
+}
+
+.offer-agenda {
+  padding: 14px 4px 4px;
+  border-top: 3px double black;
+}
+
+.offer-agenda > h3 {
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.offer-list,
+.offer-thread {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.offer-card {
+  padding: 12px;
+  margin-bottom: 12px;
+  background: rgba(207, 204, 191, 0.9);
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.offer-card__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid black;
+}
+
+.offer-card__heading h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.offer-status {
+  flex: 0 0 auto;
+  max-width: 145px;
+  padding: 4px 7px;
+  color: var(--theme-hover);
+  border: 2px solid currentColor;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+.offer-status--accepted {
+  color: var(--theme-hover);
+  border-style: double;
+  border-width: 4px;
+}
+
+.offer-status--rejected {
+  color: rgb(115, 20, 32);
+  transform: rotate(2deg);
+}
+
+.offer-status--changes_requested {
+  color: black;
+  border-style: dashed;
+}
+
+.offer-thread {
+  display: grid;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.offer-message {
+  width: 92%;
+  padding: 8px 10px;
+  border-left: 4px solid black;
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.offer-message--owner {
+  margin-left: auto;
+  border-right: 4px solid var(--theme-hover);
+  border-left: 0;
+}
+
+.offer-message__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.offer-message__meta strong {
+  font-weight: 900;
+}
+
+.offer-message p {
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.offer-counter-toggle,
+.offer-counter-form button {
+  padding: 8px 10px;
+  color: black;
+  background: var(--theme-text);
+  border: 2px solid black;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.offer-counter-toggle:hover,
+.offer-counter-form button:hover {
+  background: var(--theme-hover);
+}
+
+.offer-counter-form {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid black;
+}
+
+.offer-counter-form[hidden] {
+  display: none;
+}
+
+.offer-counter-form label {
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.offer-counter-form textarea {
+  display: block;
+  width: 100%;
+  margin: 7px 0;
+  padding: 8px;
+  color: black;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid black;
+  font: inherit;
+  resize: vertical;
+}
+
+.offer-counter-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 520px) {
+  .client-schedule-modal {
+    width: calc(100vw - 40px);
+    border-left-width: 7px;
+  }
+
+  .client-schedule-modal h2 {
+    padding: 16px 8px;
+    font-size: 1.35rem;
+  }
+
+  .client-schedule-content {
+    width: calc(100% - 8px);
+    max-width: calc(100% - 8px);
+    padding-right: 8px;
+    padding-left: 22px;
+    margin: 8px 4px;
+  }
+
+  .schedule-intro {
+    overflow-wrap: anywhere;
+  }
+
+  .schedule-access-form .field-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .schedule-access-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .schedule-access-actions .btn,
+  .schedule-session-actions .btn {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .appointment-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .appointment-card__head {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .appointment-status {
+    align-self: flex-start;
+  }
+
+  .offer-card__heading {
+    flex-direction: column;
+  }
+
+  .offer-status {
+    align-self: flex-start;
+  }
+
+  .client-schedule-modal .form-status {
+    text-align: left;
+  }
 }
 

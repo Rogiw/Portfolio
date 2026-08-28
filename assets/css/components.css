@@ -30,7 +30,12 @@
   justify-content: center;
   width: 140px;
   height: 200px;
+  padding: 0;
   margin: 10px;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   opacity: 0.42;
   touch-action: pan-y;
   transform: translateX(calc(100% - var(--scheduled-peek)));
@@ -81,6 +86,31 @@
 }
 
 /* Buttons */
+.language-toggle {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  z-index: 90;
+  min-width: 48px;
+  padding: 7px 10px;
+  color: white;
+  background: black;
+  border: 2px solid var(--theme-text);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  background: var(--theme-hover);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
 .btn {
   display: flex;
   place-content: center;

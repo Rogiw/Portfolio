@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lines = document.querySelectorAll(".animated-text .line");
   let currentLine = 0;
+  let animationRun = 0;
 
-  function eraseLines(groupName, callback) {
+  function eraseLines(groupName, callback, run) {
+    if (run !== animationRun) return;
     const groupLines = Array.from(lines).filter((line) => line.dataset.clearGroup === groupName);
     let currentGroupLine = groupLines.length - 1;
 
     function eraseLine() {
+      if (run !== animationRun) return;
       if (currentGroupLine < 0) {
         callback();
         return;
@@ -16,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       line.classList.add("typing");
 
       function eraseChar() {
+        if (run !== animationRun) return;
         if (line.textContent.length > 0) {
           line.textContent = line.textContent.slice(0, -1);
           setTimeout(eraseChar, 16);
@@ -33,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     eraseLine();
   }
 
-  function typeLine() {
+  function typeLine(run) {
+    if (run !== animationRun) return;
     if(currentLine >= lines.length) return;
 
     const line = lines[currentLine];
@@ -43,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let index = 0;
 
     function typeChar() {
+      if (run !== animationRun) return;
       if(index < text.length) {
         line.textContent += text[index];
         index++;
@@ -53,17 +59,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (line.hasAttribute("data-clear-after")) {
           setTimeout(() => {
-            eraseLines(line.dataset.clearGroup, typeLine);
+            eraseLines(line.dataset.clearGroup, () => typeLine(run), run);
           }, 900);
           return;
         }
 
-        setTimeout(typeLine, 200); 
+        setTimeout(() => typeLine(run), 200); 
       }
     }
 
     typeChar();
   }
 
-  typeLine();
+  const restart = () => {
+    animationRun++;
+    currentLine = 0;
+    lines.forEach((line) => {
+      line.textContent = "";
+      line.classList.remove("typing", "is-cleared");
+    });
+    typeLine(animationRun);
+  };
+
+  window.addEventListener("site-language-changed", restart);
+  restart();
 });

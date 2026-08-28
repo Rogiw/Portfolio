@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,68 +9,60 @@
     <link rel="stylesheet" href="../../assets/css/components.css">
     <link rel="stylesheet" href="../../assets/css/pages/chem/projects.css">
     <link rel="stylesheet" href="../../assets/css/pages/chem/sidebar.css">
-    <title>Lab</title>
+    <title data-i18n="chem_lab">Chem Lab</title>
 </head>
-
 <body data-sidebar-state="expanded">
-    <button class="sidebar-reveal" type="button" data-sidebar-show aria-label="Mostrar barra lateral"
-        title="Mostrar barra lateral">
+    <button class="sidebar-reveal" type="button" data-sidebar-show aria-label="Show sidebar"
+        data-i18n-aria-label="show_sidebar" title="Show sidebar" data-i18n-title="show_sidebar">
         <span aria-hidden="true">&rsaquo;</span>
     </button>
 
     <aside class="sidebar" id="chem-lab-sidebar">
         <header class="sidebar-header">
-            <div class="sidebar-logo">
-                <img src="../../assets/icons/devchem_icon.svg" alt="">
-            </div>
-
+            <div class="sidebar-logo"><img src="../../assets/icons/devchem_icon.svg" alt=""></div>
             <div class="sidebar-brand">
                 <strong>CHEM LAB</strong>
-                <span>Scientific workspace</span>
+                <span data-i18n="scientific_workspace">Scientific workspace</span>
             </div>
-
-            <button class="sidebar-resize" type="button" data-sidebar-resize aria-label="Recolher barra lateral"
-                aria-controls="chem-lab-sidebar" aria-expanded="true" title="Recolher barra lateral">
+            <button class="sidebar-resize" type="button" data-sidebar-resize aria-label="Collapse sidebar"
+                data-i18n-aria-label="collapse_sidebar" aria-controls="chem-lab-sidebar" aria-expanded="true"
+                title="Collapse sidebar" data-i18n-title="collapse_sidebar">
                 <span aria-hidden="true">&lsaquo;</span>
             </button>
         </header>
 
-        <nav class="sidebar-navigation" aria-label="Ferramentas do Chem Lab">
+        <nav class="sidebar-navigation" aria-label="Chem Lab tools" data-i18n-aria-label="chem_lab_tools">
             <section class="sidebar-group">
-                <h2>Geral</h2>
-
+                <h2 data-i18n="general">General</h2>
                 <button class="sidebar-item is-active" type="button" data-tool="overview" aria-current="page"
-                    title="Visão geral">
+                    title="Overview" data-i18n-title="general_view">
                     <span class="sidebar-item-icon" aria-hidden="true">⌂</span>
-                    <span class="sidebar-item-label">General Vision</span>
+                    <span class="sidebar-item-label" data-i18n="general_view">Overview</span>
                 </button>
             </section>
 
             <section class="sidebar-group">
-                <h2>Tools</h2>
-
-                <button class="sidebar-item" type="button" data-tool="data-entry" title="Entrada de dados">
+                <h2 data-i18n="tools">Tools</h2>
+                <button class="sidebar-item" type="button" data-tool="data-entry" title="Data entry" data-i18n-title="data_entry">
                     <span class="sidebar-item-icon" aria-hidden="true">＋</span>
-                    <span class="sidebar-item-label">DataEntry</span>
+                    <span class="sidebar-item-label" data-i18n="data_entry">Data entry</span>
                 </button>
-
-                <button class="sidebar-item" type="button" data-tool="analysis" title="Análise">
+                <button class="sidebar-item" type="button" data-tool="analysis" title="Analysis" data-i18n-title="analysis">
                     <span class="sidebar-item-icon" aria-hidden="true">∿</span>
-                    <span class="sidebar-item-label">Analise</span>
+                    <span class="sidebar-item-label" data-i18n="analysis">Analysis</span>
                 </button>
-
-                <button class="sidebar-item" type="button" data-tool="docs" title="Documentação">
+                <button class="sidebar-item" type="button" data-tool="docs" title="Documentation" data-i18n-title="documentation">
                     <span class="sidebar-item-icon" aria-hidden="true">▤</span>
-                    <span class="sidebar-item-label">Documentation</span>
+                    <span class="sidebar-item-label" data-i18n="documentation">Documentation</span>
                 </button>
             </section>
         </nav>
 
         <footer class="sidebar-footer">
-            <button class="sidebar-hide" type="button" data-sidebar-hide aria-label="Ocultar barra lateral"
-                title="Ocultar barra lateral">
+            <button class="sidebar-hide" type="button" data-sidebar-hide aria-label="Hide sidebar"
+                data-i18n-aria-label="hide_sidebar" title="Hide sidebar" data-i18n-title="hide_sidebar">
                 <span class="sidebar-item-icon" aria-hidden="true">&laquo;</span>
-                <span class="sidebar-item-label">close bar</span>
+                <span class="sidebar-item-label" data-i18n="close_sidebar">Close sidebar</span>
             </button>
         </footer>
     </aside>
@@ -79,21 +70,17 @@
     <header class="header">
         <div class="header-content">
             <a href="../../index.html" class="logo">Logo</a>
-            <nav class="nav">
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../chem/projects.html">Projects</a></li>
-                    <li><a href="../chem/lab.html">Lab</a></li>
-                </ul>
-            </nav>
+            <nav class="nav"><ul>
+                <li><a href="../../index.html" data-i18n="home">Home</a></li>
+                <li><a href="../chem/projects.html" data-i18n="projects">Projects</a></li>
+                <li><a href="../chem/lab.html" data-i18n="lab">Lab</a></li>
+            </ul></nav>
         </div>
     </header>
 
     <main class="content-page dashboard-panels">
-        <h1 id="page-title">Chem Lab</h1>
-        <section class="content-grid" id="lab-content">
-            <p>Loading...</p>
-        </section>
+        <h1 id="page-title" data-i18n="chem_lab">Chem Lab</h1>
+        <section class="content-grid" id="lab-content"><p data-i18n="loading">Loading...</p></section>
     </main>
 
     <template id="painel-template">
@@ -105,14 +92,12 @@
                     <button type="button" data-panel-minimize>-</button>
                 </div>
             </header>
-            <div class="panel-content" data-panel-content>
-                <p>Panel content goes here...</p>
-            </div>
+            <div class="panel-content" data-panel-content><p data-i18n="panel_content">Panel content goes here...</p></div>
         </section>
     </template>
 
+    <script src="../../assets/js/language.js"></script>
     <script src="../../assets/js/chem/sidebar.js"></script>
     <script src="../../assets/js/chem/lab.js"></script>
 </body>
-
 </html>

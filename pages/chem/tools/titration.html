@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,126 +8,86 @@
     <link rel="stylesheet" href="../../../assets/css/base.css">
     <link rel="stylesheet" href="../../../assets/css/components.css">
     <link rel="stylesheet" href="../../../assets/css/pages/chem/tools.css">
-
     <script type="importmap">
-        {
-            "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
-            }
-        }
+        {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"}}
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js">
-    </script>
-    <title>Laboratório de Titulação</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <title data-i18n="titration_lab">Titration laboratory</title>
 </head>
-
 <body>
     <main class="titration-workspace">
         <header class="experiment-header">
             <div>
-                <h1>Laboratório de Titulação</h1>
-                <p id="experiment-name">Novo experimento</p>
+                <h1 data-i18n="titration_lab">Titration laboratory</h1>
+                <p id="experiment-name" data-i18n="new_experiment">New experiment</p>
             </div>
-            <button type="button" id="edit-experiment">
-                Editar experimento
-            </button>
+            <button type="button" id="edit-experiment" data-i18n="edit_experiment">Edit experiment</button>
         </header>
+
         <section class="laboratory-grid">
-            <!-- O Three.js colocará um canvas dentro dessa div -->
             <section class="viewer-panel">
-                <h2>Bancada virtual</h2>
-                <div id="laboratory-viewer" class="viewer3d" aria-label="Visualizador 3D do laboratório de titulação">
-                </div>
+                <h2 data-i18n="virtual_bench">Virtual bench</h2>
+                <div id="laboratory-viewer" class="viewer3d" aria-label="3D titration laboratory viewer"
+                    data-i18n-aria-label="titration_viewer"></div>
             </section>
             <aside class="experiment-panel">
-                <h2>Reação</h2>
-                <p id="reaction-equation">
-                    Nenhuma reação informada. Por favor, edite o experimento para adicionar uma reação química.
-                </p>
-                <h2>Soluções</h2>
-                <p id="solution-cards">
-                    Nenhuma solução informada. Por favor, edite o experimento para adicionar soluções.
-                </p>
-                <button type="button" id="calculate-titration">
-                    Calcular titulação
-                </button>
-                <p id="calculation-status" aroia-live="polite">
-                    Nenhum cálculo realizado ainda.
+                <h2 data-i18n="reaction">Reaction</h2>
+                <p id="reaction-equation" data-i18n="no_reaction">No reaction provided. Edit the experiment to add a chemical reaction.</p>
+                <h2 data-i18n="solutions">Solutions</h2>
+                <p id="solution-cards" data-i18n="no_solutions">No solutions provided. Edit the experiment to add solutions.</p>
+                <button type="button" id="calculate-titration" data-i18n="calculate_titration">Calculate titration</button>
+                <p id="calculation-status" aria-live="polite" data-i18n="no_calculation">No calculation has been performed yet.</p>
             </aside>
         </section>
+
         <section class="equation-panel">
-            <h2>Equações COmplementares</h2>
-            <div id="complementary-equations">
-                <p>Realize o cálculo para gerar os resultados.</p>
-            </div>
+            <h2 data-i18n="complementary_equations">Complementary equations</h2>
+            <div id="complementary-equations"><p data-i18n="calculate_results">Run the calculation to generate the results.</p></div>
         </section>
         <section class="chart-panel">
-            <h2>Curva de titulação</h2>
+            <h2 data-i18n="titration_curve">Titration curve</h2>
             <div class="chart-container">
-                <canvas id="titration-curve" aria-label="Curva de titulação" role="img"></canvas>
+                <canvas id="titration-curve" aria-label="Titration curve" data-i18n-aria-label="titration_curve" role="img"></canvas>
+            </div>
         </section>
     </main>
+
     <dialog id="experiment-dialog" class="experiement-dialog">
         <div class="doalog-header">
             <header>
-                <h2>Configurar experiemento</h2>
-                <button type="button" id="close-dialog" aria-label="Fechar">
-                    x
-                </button>
+                <h2 data-i18n="configure_experiment">Configure experiment</h2>
+                <button type="button" id="close-dialog" aria-label="Close" data-i18n-aria-label="close">x</button>
             </header>
             <form id="experiment-form">
                 <fieldset>
-                    <legend>Experimento</legend>
-                    <label>
-                        Nome
+                    <legend data-i18n="experiment">Experiment</legend>
+                    <label><span data-i18n="experiment_name">Name</span>
                         <input type="text" name="experiment-name" id="experiment-name-input" required>
                     </label>
-                    <label>
-                        Equação molecular
+                    <label><span data-i18n="molecular_equation">Molecular equation</span>
                         <input id="form-equation" type="text" placeholder="HCl + NaOH -> NaCl + H2O" required>
                     </label>
                 </fieldset>
                 <fieldset>
-                    <legend>Analise no elernmeyer</legend>
-                    <label>
-                        Fórmula
-                        <input id="form-analyte-formula" type="text" placeholder="HCl" required>
-                    </label>
-                    <label>
-                        Voleme (mL)
-                        <input id="form-analyte-volume" type="number" min="0.000001" step="any" required>
-                    </label>
-                    <label>
-                        Concentração (M)
-                        <input id="form-analyte-concentration" type="number" min="0.000001" step="any" required>
-                    </label>
+                    <legend data-i18n="erlenmeyer_analysis">Analysis in the Erlenmeyer flask</legend>
+                    <label><span data-i18n="formula">Formula</span><input id="form-analyte-formula" type="text" placeholder="HCl" required></label>
+                    <label><span data-i18n="volume">Volume</span> (mL)<input id="form-analyte-volume" type="number" min="0.000001" step="any" required></label>
+                    <label><span data-i18n="concentration">Concentration</span> (M)<input id="form-analyte-concentration" type="number" min="0.000001" step="any" required></label>
                 </fieldset>
                 <fieldset>
-                    <legend>Titulante na bureta</legend>
-
-                    <label>
-                        Fórmula
-                        <input id="form-titrant-formula" type="text" placeholder="NaOH" required>
-                    </label>
-
-                    <label>
-                        Volume inicial da bureta (mL)
-                        <input id="form-titrant-volume" type="number" min="0.000001" step="any" required>
-                    </label>
-
-                    <label>
-                        Concentração (mol/L)
-                        <input id="form-titrant-concentration" type="number" min="0.000001" step="any" required>
-                    </label>
+                    <legend data-i18n="burette_titrant">Titrant in the burette</legend>
+                    <label><span data-i18n="formula">Formula</span><input id="form-titrant-formula" type="text" placeholder="NaOH" required></label>
+                    <label><span data-i18n="initial_burette_volume">Initial burette volume</span> (mL)<input id="form-titrant-volume" type="number" min="0.000001" step="any" required></label>
+                    <label><span data-i18n="concentration">Concentration</span> (mol/L)<input id="form-titrant-concentration" type="number" min="0.000001" step="any" required></label>
                 </fieldset>
                 <div class="dialog-actions">
-                    <button type="submit">Salvar</button>
-                    <button type="button" id="cancel-dialog">Cancelar</button>
+                    <button type="submit" data-i18n="save">Save</button>
+                    <button type="button" id="cancel-dialog" data-i18n="cancel">Cancel</button>
                 </div>
             </form>
         </div>
     </dialog>
-    <script type="module" src="../../assets/js/chem/titration.js">
-    </script>
+    <script src="../../../assets/js/language.js"></script>
+    <script type="module" src="../../../assets/js/chem/tools/titration.js"></script>
 </body>
+</html>
